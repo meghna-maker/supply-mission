@@ -19,16 +19,16 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	packageBody = Bodies.circle(300 , 200 , 25 , {restitution:0.5, isStatic:false});
+	packageBody = Bodies.circle(300 , 200 , 50, {restitution:0.5, isStatic:false});
 	World.add(world, packageBody);
 	console.log(packageBody);
 
 	//Create a Ground
-	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
+	ground = Bodies.rectangle(width/2, 680, width, 10 , {isStatic:true} );
  	World.add(world,ground);
 	console.log(ground);
 
-	helicopter = Bodies.rectangle(300,180,50,50,{isStatic:true});
+	helicopter = Bodies.rectangle(300,180,100,100,{isStatic:true});
 	World.add(world,helicopter);
 
 	Engine.run(engine);
@@ -41,7 +41,7 @@ function draw() {
   
  rect(ground.position.x,ground.position.y,800,10);
  image(packageIMG,packageBody.position.x,packageBody.position.y,50,50);
- image(helicopterIMG,helicopter.position.x,helicopter.position.y,50,50);
+ image(helicopterIMG,helicopter.position.x,helicopter.position.y,100,100);
 }
 
 function keyPressed() {
